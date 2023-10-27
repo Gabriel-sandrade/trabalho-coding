@@ -259,6 +259,28 @@ function verificarQuartos() {
 setInterval(verificarQuartos, 10000);
 
 
+function mostrarClientes() {
+    var tabela = document.getElementById('tabelaClientes');
+
+    for (var cliente of clientes) {
+        for (var cpf in cliente) {
+            var info = cliente[cpf];
+            var row = tabela.insertRow();
+            var cellCPF = row.insertCell(0);
+            var cellNome = row.insertCell(1);
+            var cellTelefone = row.insertCell(2);
+            var cellEmail = row.insertCell(3);
+            var cellDataNascimento = row.insertCell(4);
+
+            cellCPF.innerHTML = cpf;
+            cellNome.innerHTML = info.nome;
+            cellTelefone.innerHTML = info.telefone;
+            cellEmail.innerHTML = info.email;
+            cellDataNascimento.innerHTML = info.dataDeNascimento;
+        }
+    }
+}
+
 
 function inicializar() {
     var path = window.location.pathname;
