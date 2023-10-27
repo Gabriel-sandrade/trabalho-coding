@@ -1,21 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js"></script>
     <title>clientes</title>
 </head>
 <body>
-    <table>
-        <table>
-           <thead>
-            <th>CPF</th>
-            <th>Nome</th>
-            <th>Telefone</th>
-            <th>E-mail</th>
-            <th>Data de nascimento</th>
-           </thead>
-        </table>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="quartos.html">Quartos</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Clientes</h1>
+    <table id="tabelaClientes">
+        <thead>
+        <th>CPF</th>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>E-mail</th>
+        <th>Data de nascimento</th>
+        </thead>
     </table>
+
+
+    <script>
+        window.onload = function() {
+            mostrarClientes();
+        };
+    </script>
 </body>
 </html>
