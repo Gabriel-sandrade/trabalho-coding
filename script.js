@@ -88,13 +88,13 @@ function verificarCPF() {
                     break;
                 }
             }
-    
+            
+            // Armazena o CPF em sessionStorage
+            sessionStorage.setItem('cpf', cpf.value);
             if (existe) {
-                // Redireciona para clientes.html se o CPF já existir
-                window.location.href = 'clientes.html';
+                // Redireciona para alugar.html se o CPF já existir
+                window.location.href = 'alugar.html';
             } else {
-                // Armazena o CPF em sessionStorage
-                sessionStorage.setItem('cpf', cpf.value);
                 // Redireciona para cadastro.html se o CPF não existir
                 window.location.href = 'cadastro.html';
             }
@@ -293,6 +293,8 @@ function inicializar() {
     } else if (path === "/alugar.html" || path === '/quartos.html') {
         mostraQuartos();
         alugarQuarto();
+    } else if (path === '/clientes.html') {
+        mostrarClientes();
     }
 }
 
