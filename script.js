@@ -262,6 +262,18 @@ setInterval(verificarQuartos, 10000);
 function mostrarClientes() {
     var tabela = document.getElementById('tabelaClientes');
 
+    // Limpar a tabela antes de preenchê-la
+    tabela.innerHTML = `
+        <thead>
+            <th>CPF</th>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>E-mail</th>
+            <th>Data de nascimento</th>
+            <th>Remover</th> <!-- Adicione esta linha -->
+        </thead>
+    `;
+
     for (var cliente of clientes) {
         for (var cpf in cliente) {
             var info = cliente[cpf];
@@ -271,14 +283,27 @@ function mostrarClientes() {
             var cellTelefone = row.insertCell(2);
             var cellEmail = row.insertCell(3);
             var cellDataNascimento = row.insertCell(4);
+            var cellRemover = row.insertCell(5); // Adicione esta linha
 
             cellCPF.innerHTML = cpf;
             cellNome.innerHTML = info.nome;
             cellTelefone.innerHTML = info.telefone;
             cellEmail.innerHTML = info.email;
             cellDataNascimento.innerHTML = info.dataDeNascimento;
+
+            // Adicione esta linha
+            cellRemover.innerHTML = `<button onclick="removerCliente('${cpf}')">Remover</button>`;
         }
     }
+}
+
+
+function removerCliente(cpf) {
+    console.log("Vai remover");
+    console.log(clientes);
+    clientes = clientes.filter(cliente => !cliente.hasOwnProperty(cpf));
+    sessionStorage.setItem('clientes', JSON.stringify(clientes));
+    mostrarClientes();
 }
 
 
@@ -295,6 +320,7 @@ function inicializar() {
         alugarQuarto();
     } else if (path === '/clientes.html') {
         mostrarClientes();
+        removerCliente();
     }
 }
 

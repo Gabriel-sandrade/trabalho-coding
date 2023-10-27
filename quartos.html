@@ -9,31 +9,42 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="quartos.html">Quartos</a></li>
-                <li><a href="clientes.html">Clientes</a></li>
-            </ul>
-        </nav>
+        <div id="header">
+            <nav class="bg-light border navbar navbar-expand-md navbar-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/"><span class="blue">MO</span><span class="red">TE</span><span class="yellow">L</span></a>
+                    <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbar">
+                            <ul class="navbar-nav me-auto mt-2">
+                                <li class="nav-item"><a class="nav-link" href="/index.html">Início</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/quartos.html">Quartos</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/clientes.html">Clientes</a></li>
+                            </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
     </header>
-    
-    <h1>Quartos</h1>
+    <main>
+        <h1 class="quarto">Quartos</h1>
 
-<h2>Ocupados</h2>
-<table id="tabelaOcupados">
-    <tr>
-        <th>Quarto</th>
-    </tr>
-</table>
+        <h2 class="quarto">Ocupados</h2>
+        <table id="tabelaOcupados">
+            <tr>
+                <th>Quarto</th>
+                <th>Remover</th>
+            </tr>
+        </table>
 
-<h2>Desocupados</h2>
-<table id="tabelaDesocupados">
-    <tr>
-        <th>Quarto</th>
-    </tr>
-</table>
-
+        <h2 class="quarto">Desocupados</h2>
+        <table id="tabelaDesocupados">
+            <tr>
+                <th>Quarto</th>
+            </tr>
+        </table>
+    </main>
 <script src="script.js"></script>
 
 </body>
