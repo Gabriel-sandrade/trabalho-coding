@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="script.js"></script>
-    <title>Motel</title>
+    <title>Quartos</title>
 </head>
 <body>
     <header>
@@ -17,15 +17,24 @@
             </ul>
         </nav>
     </header>
-
-    <h1>Motel</h1>
     
+    <h1>Quartos</h1>
 
-    <h2>Cadastro Do Cliente</h2>
-    <form>
-        <label for="cpf">Digite o CPF do cliente:</label>
-        <input type="text" id="cpf">
-        <button id="botao" type="button" onclick="verificarCPF()">Verificar CPF</button>
-    </form>
+<h2>Ocupados</h2>
+<table id="tabelaOcupados">
+    <tr>
+        <th>Quarto</th>
+    </tr>
+</table>
+
+<h2>Desocupados</h2>
+<table id="tabelaDesocupados">
+    <tr>
+        <th>Quarto</th>
+    </tr>
+</table>
+
+<script src="script.js"></script>
+
 </body>
 </html>
